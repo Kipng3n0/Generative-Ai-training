@@ -1,1 +1,100 @@
 
+# Jac AI Chatbot with Memory
+
+A simple conversational AI chatbot built with Jac language and byllm, featuring conversation memory to maintain context throughout the chat session.
+
+## Features
+
+- Natural conversation flow with context awareness
+- Persistent memory within each chat session
+- Built with Jac's walker-based architecture
+- Powered by Google's Gemini 2.0 Flash model via byllm
+
+## Prerequisites
+
+- Python 3.13+
+- Jac language (version 0.8.7 or higher)
+- byllm library
+
+## Installation
+
+1. **Create a virtual environment:**
+```bash
+python -m venv myenv
+source myenv/bin/activate  
+```
+
+2. **Install Jac:**
+```bash
+pip install jaclang
+```
+
+3. **Install byllm:**
+```bash
+pip install byllm
+```
+
+4. **Set up API keys:**
+   
+   Create a `.env` file or set environment variables for your LLM provider:
+```bash
+export GEMINI_API_KEY="your-api-key-here"
+```
+
+## Usage
+
+Run the chatbot:
+```bash
+jac run chatbot.jac
+```
+
+Once started, simply type your messages and press Enter. The bot will respond while maintaining the conversation context.
+
+To exit the chatbot, type `exit` and press Enter.
+
+
+## How It Works
+
+The chatbot uses Jac's walker architecture:
+
+1. **Walker**: `ChatBot` walker manages the conversation flow
+2. **Memory**: Conversation history is stored in the `history` variable
+3. **LLM Integration**: Uses byllm's `by llm()` decorator for AI-powered responses
+4. **Context**: Each user message and bot response is appended to the history, maintaining conversation context
+
+## Configuration
+
+You can modify the LLM model by changing the model name in the code:
+
+```jac
+glob llm = Model(model_name="gemini/gemini-2.0-flash", verbose=False);
+```
+
+Supported models include:
+- `gemini/gemini-2.0-flash`
+- `gpt-4o`
+- `gpt-4o-mini`
+- Other models supported by byllm
+
+## Project Structure
+
+```
+.
+├── chatbot.jac          # Main chatbot implementation
+├── README.md           
+└── .env                 # API keys
+```
+
+## Technical Details
+
+- **Language**: Jac 0.8.7
+- **AI Framework**: byllm
+- **Architecture**: Walker-based graph traversal
+- **Memory Management**: String-based conversation history
+
+
+## Acknowledgments
+
+- Built with [Jac Language](https://www.jac-lang.org/)
+- Powered by [byllm](https://github.com/Jaseci-Labs/byllm)
+- Uses Google's Gemini AI models
