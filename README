@@ -18,7 +18,7 @@ A simple conversational AI chatbot built with Jac language and byllm, featuring 
 
 ## Installation
 
-1. **Create a virtual environment:**
+1. **Create and activate a virtual environment:**
 ```bash
 python -m venv myenv
 source myenv/bin/activate  
@@ -38,7 +38,7 @@ pip install byllm
    
    Create a `.env` file or set environment variables for your LLM provider:
 ```bash
-export GEMINI_API_KEY="your-api-key-here"
+export GEMINI_API_KEY=""
 ```
 
 ## Usage
