@@ -38,7 +38,7 @@ pip install byllm
    
    Create a `.env` file or set environment variables for your LLM provider:
 ```bash
-export GEMINI_API_KEY=""
+export GEMINI_API_KEY="type your api key here"
 ```
 
 ## Usage
